@@ -1,5 +1,6 @@
-Building Zcash
+Building Privy
 
-See the Zcash github wiki (https://github.com/zcash/zcash/wiki) for instructions on building zcashd,
-the intended-for-services, no-graphical-interface, reference
-implementation of Zcash.
+Tested on Ubuntu 16.04
+
+$ ./privyutils/build.sh
+$ ./src/privyd
