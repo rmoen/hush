@@ -36,7 +36,7 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = "main";
-        strCurrencyUnits = "ZEC";
+        strCurrencyUnits = "PRV";
         consensus.fCoinbaseMustBeProtected = true;
         consensus.nSubsidySlowStartInterval = 2;
         consensus.nSubsidyHalvingInterval = 840000;
@@ -76,18 +76,19 @@ public:
          * >>> from pyblake2 import blake2s
          * >>> 'Zcash' + blake2s(b'Reuters:... ').hexdigest()
          */
-        const char* pszTimestamp = "Zdashe540ecf100001889836c7d491a2f44e6bc6076d59e5e317255946b71be3fc516";
+        const char* pszTimestamp = "Goldman Sachs Banker Gary Cohn is Trump's Top Choice to Replace Janet Yellen at Fed";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 520617983 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 0;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("MHQCAQEEIDMsCNdPZtl/W5NoiR6cRo1ppDoldgNbJSFtmG0HTGunoAcGBSuBBAAKoUQDQgAEIjIG2xrTEoMCKmvMrsUNkRnkb6e1uSBHMQBDS0+rrvwgRz1oIUKqMaqfFSf2Ip13ZXgX36G/PvNmke/AXU0qWA==") << OP_CHECKSIG;
+
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock.SetNull();
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 4;
-        genesis.nTime    = 1479401611;
+        genesis.nTime    = 1500015717;
         genesis.nBits    = 0x1f07ffff;
         genesis.nNonce   = uint256S("0x1205000000000000000000000000000000000000000000000000000000000000");
         genesis.nSolution = ParseHex("0045f33727869d999e1d90de13eec508bb9eedf7c623ae0926922a749df12927967ce41f0363365e536a149ced0a25ce7258bcf4d36c9d69ea830ecafaac0a20576ee2405fa6e1ed91e5e5f3e72add8dae92175e05bb114100c654b90a0ea0e35e3ecee480d073b90c0d252963519492dce839f14bd3e54b017972fe05c30f61d73437d2ccb8a8dac1f33ba27c9d8a81bc02911a0f04f0af099ba8cc9114bd0de60fcd699673bc7a05d06baf544c5daa773991ff85c269c17f3a58618818f91d6ee9e4c393cd8d03428a2cc9be4243384caf197c77029b8c6c9387ab7a4966faac8efb13f7f9e259040fbbc1295551ad10084dba5ef0b732da7c90bd06026152acc74aad871aa3c2e46666d262129f07e128a0ea322b532851d649d2e0443954dafaaddfa6af28a70c786b94d904cb8ad3fda5364d9d5cccd1ce802f801dad25644a7dcab1c44191f24cdd8997f19c3602bc6e936aca34413a3270f837d94b211c5ad7533a070fe7b5651db5bf5d2aa13d503af5eef912fdcb5704a1bfc4c095d9b3da8f62261ed0dea089bf5b12db067ce1b4bee14f6515a180dedfeac9d794649da2b203e2a975db5c961daf788239ec722a7afbc63b8cb30c11e0ce1943f71981c3437530a4c0fcec0f9e7c6c1f5e85373ff132ddccb202916665c5559ddbcff20c743f15e2b7748a11d5de283f8cf190cb0c47feec730f6bde470ae172b9fdfc07e96362dd9238833876ff14b8028e811af7610b08842aac55f79f066e5df160104bd571f44fb16d7476e2626458c2992f6291781915d5ee927594c8a5966ba379ace56cf30a9c5f79e70fa6347e664796eea268d74862522ac275bf94ef2e406034ff121345351b92245ba834c752249d3506a111407bbd10e31b1167f9c3702fc54176e18ad8ca6211c892d4ba4598b3d834c2aa06392e21b4ff3d6d510132989a9828086bbbd1e03debe3fd44e34550c54103df97e25709e086efefc27013b9fc08bc777f96630876dfcba638d5f1f2fe10935d5fb950388ca485044535350e83267d0b5c75e5f570cd849d8567daecb90b011f72bccde31e8c6b13a630b82dc1fe68f7ef261013e2a91ed033c11fa201f4a32f7a05a58cbbce0a13f175c5e08a3ced164686a26277be7bbac9fed583276d12d67a12649b4f46e466bdc57bed60c3f8bd6e05f73d54686d36e97a6461cbda430abf9ec8df6699160822abbc947463338741c961fcaab0dbbd2a2b92084d0b372242e6103aa54479fc7b350f35c23eb1f3161352ec3e1ba178fd82147ff42ba02164405fe74606b6c525883dddc5fd8431bb49c889571c155974af19291e49f55fbfe7c823f526f77edc9bba773f9e370baf614175515eef3f7be1750ee2a3c915a0f8e3ea31bdd397668ebef7f0cf75ddecec887df2baf771e1013d2d4795c39ba8449c18d559eab9c2718f39531c0b632437506c9061ee9995e11173da85948b5b82e02e54977eb64db682af9a1993bbd16fcab3d55be7493a38ab9012d6c3f5834f3740fcc725aa70e0570b46073ad43c7b0a582af576f8e2afd4c6c75d933b0d8955a49c2b522d84a9fc9c75bbf2b5363667e5b42b420eddfa537ac5d15d7a4ea9c5dfd063cb03e81da219163fe7135d61db9d19f891e5784613a59df7ffefa2017f8d6edfde9ce19babd5963aae94ad7bfd52e736323c73f9765c9026f1b0a560dbdcc71563586f4ced072c0903bdf6362fe4f4c0cea265ad48a6639bccaa08b5593a9f0eeac5cfcc14ca6d2e7449ec029598b4061793745ba3e53dc289c16ee84c7c2575824e7a5e372d8c8e1bf0a2dfa90283a67bd305c684b39af1d109004522301344a9c346a0e227c45749aa24b11623211155bad78e1a137376738662a78619dceaf0c79f");
@@ -169,7 +170,7 @@ public:
         nPruneAfterHeight = 1000;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1477648033;
+        genesis.nTime = 1500015717;
         genesis.nBits = 0x2007ffff;
         genesis.nNonce = uint256S("0x0000000000000000000000000000000000000000000000000000000000000006");
         genesis.nSolution = ParseHex("000298d24542a341df3f83f173c3b9b261ee5eecfc258e1e8041898a88556ab4516e4dfec2803e77ea0a0814bb64e108f6fadd9942372f29ec2e90d11c539b0f828ac24b6c0fb9ab19d1a187c6a6f8aa23b2509308c3a36af555eb6b06ffe418c67aef69bd43dee32120b375959b6e07bdef49f238dcce2e0dde4b598ae20e8a75a8324fd6a99a21b41457b8e03a10e0fb9bad35abb73a8f2d1505e49a28b77bd26faa3d353911a804357a0e8f4d69472c49a0f4c1c1569c740dc3e25b19cf351cef9d92abb16af3aed2a561d767fdbcd6d411f3f6016b65fbd330120162844bef30d65bf20d731e2a5a64078fe7bae89fd50647cb1a3dc7381e1fde151a54fb22857905b292a5b9af79c6a74c285c10b32375cdd4e94d44748ec9e406a8a210116be57329021ab8d51e80288e294bf053fa0044c75a618f3e14de25a5179764d29fdc95e8c70de1bb0b6dfa40f0ae06008d0d3739d45cbb207cd1299c60e1fe5bb19f47ad63b356102c19025f7fdc98a53cdd02ea95da7805cd010326934530c2b5cca762a885aa07d1ce23fd7d230c3ce9c12754862fd07715e61363b779ef51fa7cdc02e1b5f87e832bcbf46ab3b35b4e47aa10325f4f9630867d94b81be65ba22795428b71835eb19db670600dc557ab6b4f8edb6eac821cdf95f3b8afe05a8b0816a3e4b2bbb84b77fa3ff7b122665a5f2bde9a539f013e8967c382ce90b167518e1a69498a8fa5d688d620c76cf3da371895ec8ae356c0c2d535439b739604061607218e18094999e8f327053cad08f6921c0b2d0a801720b5ade225c896b732d2480f82abc695a9cb0b0a17dfdd483f66af2603ba876f53668dc0b6fd8b2a51b1f9e0603e55171aa398f85c760b6c8d3ea4f91293c5ee2acf6942a35e71ec233500a6071ef650d3386e6240f65cc3dcf75ee558c4b6f9a203195410410019a5bf1ba32d6db9c1278699f180121673338d8b1d860e67d68b7e7c5c12960536dea84588edf942840f77dfa5aac8c8036946619d5b76b5d0848d0f18122ff28585019070a52e14d37efbc07db1e5e35f3723054d98d55a821bf2ce8100eb95575ab8d49e7a43a408b009d79b0f7ad74d2b253247c03d9e055550f294066b69aa20048cae6709054e753fdc26c36e7ccab967fe4bed899bd68d5cc8389212feb5ca6ae8984aa9028fc9ba9c1c8bb7aeebc33509556da6945b1e12e7442a1b6bb25884f6d46ef80d7779313fb02a1f28a4247f96957d1c156ae11ea5926d2e7ef5c4f915357c47dfadfca52eb4f5a956750f6d2ecec944f80e2aa402fd6d9a3c0dcd6b261d00e02b7dba2dc4723d3f1f1dbbaf13b26aefa59ee83507b04afc0edd697da81219045b1e643062b7e11884afdd746ad15a59cfd73821da896e430e755d71e85397bf52bf4e742219be7702ba050b72953badac4d46b53e39e4e6552a7bacf9161cebed451221f12f13d22588f5167544ac30954f184840ca3b88576e851d526125cf3ba4fb0c104bbf198151d535c9407fbdd0c99b91f73952c34e79a82f04bc97535cc1f3f0373012ed21ae6539f646b50ddf33c93b582ce47b758e459a3711d4057f16b29e6baf0bcb25297a46f17086852168087ee1e8fb6eba8d3c0becf89079e74539d4e490f82bc547076386dee9f90468f5f72c07a170dc381283e8eaf2da985afdb80f277d1fc4ac16570b7f12a3a8e15ca0660231b6fa9e2e0c45ddff6d5ed7a8659449a528414f33ec3b9c352fbc96745322ee5f73ba89b68d659676903dbb85c204f5dcf96bcf2b60a81966241a459c8d994a1d96d62295724ceaac645febf563451af5e4a9fa7fb33b4532e4f423aedf1819ab12a844b445a4baa640bfb16c5890c423eeef6d999c08b666814edf2628be5c539d");
@@ -181,18 +182,18 @@ public:
         vSeeds.push_back(CDNSSeedData("z.cash", "dnsseed.testnet.z.cash")); // Zcash
 
         // guarantees the first 2 characters, when base58 encoded, are "tm"
-        base58Prefixes[PUBKEY_ADDRESS]     = {0x1D,0x25};
+        base58Prefixes[PUBKEY_ADDRESS]     = {0x7C,0x0F};
         // guarantees the first 2 characters, when base58 encoded, are "t2"
-        base58Prefixes[SCRIPT_ADDRESS]     = {0x1C,0xBA};
+        base58Prefixes[SCRIPT_ADDRESS]     = {0x51,0xB7};
         // the first character, when base58 encoded, is "9" or "c" (as in Bitcoin)
-        base58Prefixes[SECRET_KEY]         = {0xEF};
+        base58Prefixes[SECRET_KEY]         = {0x93};
         // do not rely on these BIP32 prefixes; they are not specified and may change
-        base58Prefixes[EXT_PUBLIC_KEY]     = {0x04,0x35,0x87,0xCF};
-        base58Prefixes[EXT_SECRET_KEY]     = {0x04,0x35,0x83,0x94};
+        base58Prefixes[EXT_PUBLIC_KEY]     = {0x19,0xBD,0xCF,0x6C};
+        base58Prefixes[EXT_SECRET_KEY]     = {0xBA,0x44,0xE1,0x8D};
         // guarantees the first 2 characters, when base58 encoded, are "zt"
-        base58Prefixes[ZCPAYMENT_ADDRRESS] = {0x16,0xB6};
+        base58Prefixes[ZCPAYMENT_ADDRRESS] = {0xBD,0x24};
         // guarantees the first 2 characters, when base58 encoded, are "ST"
-        base58Prefixes[ZCSPENDING_KEY]     = {0xAC,0x08};
+        base58Prefixes[ZCSPENDING_KEY]     = {0x81,0x46};
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
