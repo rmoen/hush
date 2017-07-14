@@ -1,41 +1,35 @@
-HUSH 1.0.9
+Privy 1.0
 =============
 
-What is HUSH?
+Privy, your secret and secure financial freedom.
 --------------
 
-![Logo](doc/hush/hush.png "Logo")
+![Logo](doc/privy/privy.png "Logo")
 
-HUSH (formerly Zdash) is a private implementation of the "Zerocash" protocol forked from [ZCash](https://z.cash/).
+Privy is a private implementation of the "Zerocash" protocol forked from [HUSH](https://www.myhush.com/).
+
 Based on Bitcoin's code, it intends to offer a far higher standard of privacy
 through a sophisticated zero-knowledge proving scheme that preserves
 confidentiality of transaction metadata. 
 
-This software is the HUSH node and command-line client. It downloads and stores the entire history
-of HUSH transactions; depending on the speed of your computer and network
+This software is the Privy node and command-line client. It downloads and stores the entire history
+of Privy transactions; depending on the speed of your computer and network
 connection, the synchronization process could take a day or more once the
 blockchain has reached a significant size.
 
 
-**HUSH is unfinished and highly experimental.** Use at your own risk!
+**Privy is unfinished and highly experimental.** Use at your own risk!
 
 TEAM
 ----
 
-* Axel Karlsson: [@sparkit] Community manager, general communications.
-* Iolar Demartini Junior: [@demartini] Web Developer (Front End).
-* David Mercer: [@radix42] Lead Developer
-* Matthew Reichardt [@mreichardt] Core Developer, Tooling
+* Rob M: [@kururob] Lead Developer
 
 * You can join our team too and make contributions
 
 Slack
 -----
-https://slack.myhush.org/ //invite
-
-Forum
------
-https://forum.myhush.org/
+https://slack.privy.org/ //invite
 
 
 Building
@@ -43,7 +37,7 @@ Building
 The following build process generally applies to Ubuntu (and similar) Linux
 distributions. For best results it is recommended to use Ubuntu Linux 16.04
 or later.
-Build HUSH along with most dependencies from source by running
+Build Privy along with most dependencies from source by running
 Get dependencies:
 ```{r, engine='bash'}
 
@@ -53,24 +47,24 @@ sudo apt-get install \
       zlib1g-dev wget bsdmainutils automake
 ```
 
-Create a HUSH configuration file (*important*):
+Create a Privy configuration file (*important*):
 ```
-mkdir -p ~/.hush
-echo "rpcuser=username" >> ~/.hush/hush.conf
-echo "rpcpassword=`head -c 32 /dev/urandom | base64`" >>~/.hush/hush.conf
+mkdir -p ~/.privy
+echo "rpcuser=username" >> ~/.privy/privy.conf
+echo "rpcpassword=`head -c 32 /dev/urandom | base64`" >>~/.privy/privy.conf
 ```
 
-Install HUSH
+Install Privy
 ```{r, engine='bash'}
 # pull
-git clone https://github.com/MyHush/hush.git
-cd hush
+git clone https://github.com/rmoen/privy.git
+cd privy
 # fetch key
 ./zcutil/fetch-params.sh
 # Build
 ./zcutil/build.sh -j$(nproc)
-# Run a HUSH node
-./src/hushd
+# Run a PRIVY node
+./src/privyd
 ```
 
 Currently only Linux is officially supported. Windows/Mac OS X versions are in the works...
@@ -87,17 +81,13 @@ Where do I begin?
 -----------------
 As a reference a guide for joining the main Zcash network may be used:
 https://github.com/zcash/zcash/wiki/1.0-User-Guide#using-zcash
-Users should *not* follow this guide blindly since it applies to ZCash instead of HUSH!
-The section of using the command line is relevant to HUSH.
+Users should *not* follow this guide blindly since it applies to ZCash instead of Privy!
+The section of using the command line is relevant to Privy.
 
 ### Need Help?
 
 * See the documentation at the [Zcash Wiki](https://github.com/zcash/zcash/wiki)
   for help and more general information.
-
-### Not content with command line use of HUSH?
-
-A [HUSH GUI Wallet](https://github.com/vaklinov/hush-swing-wallet-ui) exists and is maintained by an independent developer as a separate project. Please read about the known issues and limitations before using the wallet.
 
 License
 -------
