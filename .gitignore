@@ -1,9 +1,9 @@
-*.tar.gz
+:*.tar.gz
 *.deb
 *.exe
 src/bitcoin
-src/zcashd
-src/zcash-cli
+src/privyd
+src/privy-cli
 src/zcash-gtest
 src/zcash-tx
 src/test/test_bitcoin
