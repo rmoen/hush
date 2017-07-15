@@ -74,9 +74,9 @@ public:
          * database (and is in any case of zero value).
          *
          * >>> from pyblake2 import blake2s
-         * >>> 'Zcash' + blake2s(b'Reuters:... ').hexdigest()
+         * >>> 'Privy' + blake2s(b'2017/07/14 Chinese Citizens Evade Internet Censors to Remember Liu Xiaobo').hexdigest()
          */
-        const char* pszTimestamp = "Zdashe540ecf100001889836c7d491a2f44e6bc6076d59e5e317255946b71be3fc516";
+        const char* pszTimestamp = "Privyc3f1dcc341c5de7f2d3025fb091b749e9188748224faebb61524348eebb1d408";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
