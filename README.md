@@ -27,10 +27,6 @@ TEAM
 
 * You can join our team too and make contributions
 
-Slack
------
-https://slack.privy.org/ //invite
-
 
 Building
 --------
