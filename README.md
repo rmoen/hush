@@ -60,9 +60,9 @@ Install Privy
 git clone https://github.com/rmoen/privy.git
 cd privy
 # fetch key
-./zcutil/fetch-params.sh
+./privyutil/fetch-params.sh
 # Build
-./zcutil/build.sh -j$(nproc)
+./privyutil/build.sh -j$(nproc)
 # Run a PRIVY node
 ./src/privyd
 ```
