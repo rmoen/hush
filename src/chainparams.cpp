@@ -101,6 +101,7 @@ public:
         vSeeds.clear();
         vSeeds.push_back(CDNSSeedData("node1", "52.162.248.223")); // node1
         vSeeds.push_back(CDNSSeedData("node2", "158.69.252.111")); // node2
+        vSeeds.push_back(CDNSSeedData("node3", "52.191.175.181")); // node3
         //vSeeds.push_back(CDNSSeedData("znodes.org", "dnsseed.znodes.org")); //
 
         // guarantees the first 2 characters, when base58 encoded, are "t1"
