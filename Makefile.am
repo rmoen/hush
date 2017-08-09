@@ -263,8 +263,8 @@ check-local:
 	@qa/pull-tester/run-bitcoind-for-test.sh $(JAVA) -jar $(JAVA_COMPARISON_TOOL) qa/tmp/compTool $(COMPARISON_TOOL_REORG_TESTS) 2>&1
 endif
 
-dist_bin_SCRIPTS = zcutil/fetch-params.sh
-dist_noinst_SCRIPTS = autogen.sh zcutil/build-debian-package.sh zcutil/build.sh
+dist_bin_SCRIPTS = privyutil/fetch-params.sh
+dist_noinst_SCRIPTS = autogen.sh privyutil/build-debian-package.sh privyutil/build.sh
 
 EXTRA_DIST = $(top_srcdir)/share/genbuild.sh qa/pull-tester/rpc-tests.sh qa/pull-tester/run-bitcoin-cli qa/rpc-tests qa/zcash $(DIST_DOCS) $(BIN_CHECKS)
 
